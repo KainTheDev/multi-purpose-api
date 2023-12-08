@@ -1,22 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;700&display=swap');
+
 body {
+    /* Disable text selection */
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
+    margin: 0;
+    /* Reset margin */
+    padding: 0;
+    /* Reset padding */
 }
 
 .body {
-    background: #424549;
+    /* Full screen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    /* Styles */
+    background: #282a2c;
     color: whitesmoke;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    font-family: cursive;
+    font-family: 'Oswald', sans-serif;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
 }
 
 .hyperlink {
@@ -28,4 +41,12 @@ body {
 .hyperlink:hover {
     color: rgb(1, 133, 221);
     cursor: pointer;
+}
+
+#endpoints {
+    background-color: #1c1e20;
+    height: auto;
+    width: auto;
+    max-width: 25%;
+    margin: auto;
 }
