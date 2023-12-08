@@ -1,8 +1,27 @@
 const express = require('express')
+const { readdirSync } = require('fs')
+const { join } = require('path')
 const app = express()
+app.use(express.static(join(__dirname, 'website')))
 
 app.get('/', function (req, res) {
-  res.
-})
+  res.redirect('/homepage');
+});
 
-app.listen(3000)
+const pages = readdirSync('website')
+for (const pageDirectory of pages) {
+  const path = join('website', pageDirectory, 'index.html')
+  app.get(pageDirectory, function (req, res) {
+    res.sendFile(path)
+  })
+}
+
+const endpoints = readdirSync('endpoints').map(endpoint => endpoint.split(".")[0])
+for (const endpoint of endpoints) {
+  const path = join(__dirname, 'endpoints', endpoint)
+  app.get(`/api/${endpoint}`, require(path))
+}
+
+app.listen(3000, "localhost", () => {
+  console.log('http://localhost:3000/')
+})
