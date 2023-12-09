@@ -23,7 +23,6 @@ for (const endpoint of endpoints) {
 }
 
 const functions = readdirSync('functions').map(func => func.split(".")[0])
-console.log(functions)
 for (const func of functions) {
   const path = join(__dirname, 'functions', func)
   app.get(`/functions/${func}`, require(path))

@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
   if (safe_search) {
     if (parameters.safe_search === 'true') safe_search = true
     if (parameters.safe_search === 'false') safe_search = false
-    if (parameters.safe_search !== 'true' && parameters.safe_search !== 'false') return sendError({ type: 'INVALID PARAMETER VALUE', message: "Parameter 'safe_search' must be true / false." })
+    if (parameters.safe_search !== 'true' && parameters.safe_search !== 'false') safe_search = true
   }
   const result = await customSearch(query, api_key, cse_id, { safe_search })
   return res.json(result)

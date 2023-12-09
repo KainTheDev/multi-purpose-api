@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;700&display=swap');
+
+body {
+    background-color: #282b30;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    color: whitesmoke;
+    font-size: 50px;
+}
+
+a {
+    font-size: 30px;
+    color: rgb(51, 102, 204);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(41, 94, 201);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: rgb(43, 97, 204);
+    background-color: transparent;
+    text-decoration: underline;
+}

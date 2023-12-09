@@ -1,52 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;700&display=swap');
 
 body {
-    /* Disable text selection */
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    margin: 0;
-    /* Reset margin */
-    padding: 0;
-    /* Reset padding */
-}
-
-.body {
-    /* Full screen */
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-
-    /* Styles */
-    background: #282a2c;
-    color: whitesmoke;
-    font-family: 'Oswald', sans-serif;
+    background-color: #282b30;
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    background-image: url('https://areadev.com.br/wp-content/uploads/2022/10/JAVASCRIPT.png');
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
-.hyperlink {
-    border: none;
-    background: transparent;
-    color: rgb(0, 153, 255);
+header {
+    color: whitesmoke;
+    font-size: 100px;
 }
 
-.hyperlink:hover {
-    color: rgb(1, 133, 221);
-    cursor: pointer;
+footer {
+    color: whitesmoke;
+    font-size: 30px;
 }
 
-#endpoints {
-    background-color: #1c1e20;
+a {
+    font-size: 30px;
+    color: rgb(51, 102, 204);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(41, 94, 201);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: rgb(43, 97, 204);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.top-body {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 100px;
+}
+
+.lower-body {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 200px;
     height: auto;
     width: auto;
-    max-width: 25%;
-    margin: auto;
+}
+
+button {
+    background-color: #5865F2;
+    color: whitesmoke;
+    border: none;
+    margin: 5px 5px 5px;
+    width: 300px;
+    height: 100px;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px grey;
+    border-radius: 20px;
+    border: 3px solid grey
+}
+button:hover {
+    background-color: #3a45c5;
+}
+button:active {
+    background-color: #0f1770;
 }
