@@ -28,6 +28,6 @@ for (const func of functions) {
   app.get(`/functions/${func}`, require(path))
 }
 
-app.listen(3000, "localhost", () => {
+app.listen(3000, () => {
   console.log('http://localhost:3000/')
 })
