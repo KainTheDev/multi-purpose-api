@@ -51,22 +51,22 @@ a:active {
     width: auto;
 }
 
-button {
+button.primary {
+    font-family: 'Oswald', sans-serif;
     background-color: #5865F2;
     color: whitesmoke;
     border: none;
     margin: 5px 5px 5px;
-    width: 300px;
+    width: 200px;
     height: 100px;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
-    text-shadow: 2px 2px grey;
     border-radius: 20px;
-    border: 3px solid grey
+    box-shadow: 0px 0px 10px #5865F2;
 }
 button:hover {
     background-color: #3a45c5;
 }
 button:active {
-    background-color: #0f1770;
+    background-color: rgb(41, 53, 187);
 }
