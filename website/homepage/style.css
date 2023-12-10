@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;700&display=swap');
 
 body {
-    background-color: #282b30;
-    text-align: center;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
     background-image: url('https://areadev.com.br/wp-content/uploads/2022/10/JAVASCRIPT.png');
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
 }
 
 header {
@@ -40,15 +44,20 @@ a:active {
 }
 
 .top-body {
+    text-align: center;
     background-color: rgba(0, 0, 0, 0.8);
+    width: 1000px;
+    margin: auto;
     margin-top: 100px;
 }
 
 .lower-body {
     background-color: rgba(0, 0, 0, 0.8);
-    margin-top: 200px;
     height: auto;
-    width: auto;
+    width: 1000px;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
 }
 
 button.primary {
@@ -57,16 +66,18 @@ button.primary {
     color: whitesmoke;
     border: none;
     margin: 5px 5px 5px;
-    width: 200px;
-    height: 100px;
+    width: 150px;
+    height: 85px;
     font-size: 30px;
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 15px;
     box-shadow: 0px 0px 10px #5865F2;
 }
-button:hover {
+
+button.primary:hover {
     background-color: #3a45c5;
 }
-button:active {
+
+button.primary:active {
     background-color: rgb(41, 53, 187);
 }
