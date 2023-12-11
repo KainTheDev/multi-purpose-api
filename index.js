@@ -8,14 +8,6 @@ app.get('/', function (req, res) {
   res.redirect('/homepage');
 });
 
-const pages = readdirSync('website')
-for (const pageDirectory of pages) {
-  const path = join('website', pageDirectory, 'index.html')
-  app.get(pageDirectory, function (req, res) {
-    res.sendFile(path)
-  })
-}
-
 const endpoints = readdirSync('endpoints').map(endpoint => endpoint.split(".")[0])
 for (const endpoint of endpoints) {
   const path = join(__dirname, 'endpoints', endpoint)

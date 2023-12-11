@@ -9,11 +9,13 @@ body {
     user-select: none;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
-    background-image: url('https://areadev.com.br/wp-content/uploads/2022/10/JAVASCRIPT.png');
+    background-image: url('MP.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 900px 900px;
+    background-position: center 30px;
+    background-color: black;
+    margin: 0;
 }
-
 header {
     color: whitesmoke;
     font-size: 100px;
@@ -48,7 +50,7 @@ a:active {
     background-color: rgba(0, 0, 0, 0.8);
     width: 1000px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 15%;
 }
 
 .lower-body {
