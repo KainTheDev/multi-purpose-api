@@ -6,9 +6,9 @@ const {default: fetch} = require("node-fetch")
  */
 async function shibeOnline (option, amount) {
   const options = ["shibes", "birds", "cats"]
-  if(!option) console.trace("Missing paremeter: option."), process.exit(0);
+  if(!option) throw new Error("Missing paremeter: option.");
   else if(!option in options) {
-    console.trace("Invalid option provided. Available options:\n- "+options.join(", ")), process.exit(0);
+    throw new Error("Invalid option provided. Available options:\n- "+options.join(", "));
   }
   return fetch(`http://shibe.online/api/${option}?count=${amount}&urls=true&httpsUrls=true`)
   .then(response => response.text())

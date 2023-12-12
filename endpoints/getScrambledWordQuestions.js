@@ -10,7 +10,10 @@ module.exports = async (req, res) => {
     const words = Number(parameters.words)
     if (words)
         config = { words: isNaN(words) }
-    let list;
-    list = (await getScrambledWordQuestions(config)).catch(e => res.json({error: e}))
-    return res.json(list)
+    try {
+        const list = await getScrambledWordQuestions(config)
+        return res.json(list)
+    } catch (e) {
+        return res.json({ error: `${e}` })
+    }
 }

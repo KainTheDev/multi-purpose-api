@@ -248,7 +248,7 @@ async function randomRate(type, config = randomRateConfig) {
                 return results;
             }
         default:
-            throw console.trace('Invalid type.');
+            throw new Error('Invalid type.');
     }
 }
 module.exports = randomRate

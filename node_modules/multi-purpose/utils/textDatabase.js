@@ -6,7 +6,7 @@ class textDatabase {
      */
     constructor(databaseName) {
         this.filePath = databaseName+".txt"
-        if(!databaseName) throw console.trace("Missing argument 'databaseName'");
+        if(!databaseName) throw new Error("Missing argument 'databaseName'");
         let data;
         try {
             data = JSON.parse(readFileSync(this.filePath, 'utf-8'))

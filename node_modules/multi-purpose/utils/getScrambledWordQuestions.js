@@ -7,12 +7,12 @@ const { default: fetch } = require("node-fetch");
  */
 async function getScrambledWordQuestions(config = { words: 10 }) {
     if (typeof config.words !== 'number') {
-        throw console.trace("Parameter 'words' must be a number");
+        throw new Error("Parameter 'words' must be a number");
     }
 
     const wordApiResponse = await fetch(`https://random-word-api.vercel.app/api?words=${config.words}`);
     if (!wordApiResponse.ok) {
-        throw console.trace(`Failed to fetch words. Status: ${wordApiResponse.status}`);
+        throw new Error(`Failed to fetch words. Status: ${wordApiResponse.status}`);
     }
 
     const wordsData = await wordApiResponse.json();

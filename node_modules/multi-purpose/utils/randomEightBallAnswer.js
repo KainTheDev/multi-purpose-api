@@ -49,15 +49,15 @@ async function randomEightBallAnswer(config) {
     if (config.customAnswers) {
         if (typeof config.customAnswers === "object") {
             try {
-                if (config.customAnswers.length == 0) throw "config.customAnswers array must atleast contain 1 answer.";
+                if (config.customAnswers.length == 0) throw new Error("config.customAnswers array must atleast contain 1 answer.");
                 generalAnswers.push(...config.customAnswers);
                 advancedAnswers.push(...config.customAnswers);
                 customAnswers = true;
             } catch (error) {
                 if (error.includes('config.customAnswers')) {
-                    throw error;
+                    throw new Error(error);
                 } else {
-                    throw "config.CustomAnswers value isn't an array.";
+                    throw new Error("config.CustomAnswers value isn't an array.");
                 }
             }
         }

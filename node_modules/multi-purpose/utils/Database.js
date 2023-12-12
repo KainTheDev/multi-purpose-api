@@ -8,7 +8,7 @@ class Database {
         if(id) {
             this.id = id
         }else{
-            console.trace("Missing ID."), process.exit(0);
+            throw new Error("Missing ID.");
         }
     }
     /**

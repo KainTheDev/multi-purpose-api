@@ -6,16 +6,18 @@ const { randomName } = require("multi-purpose");
  */
 module.exports = async (req, res) => {
     const nameType = req.query.nameType
-    const amount = req.query.amount
+    const customNamesList = req.query.customNamesList
     const apiKey = req.query.apiKey
 
     const errorList = []
-    if(!nameType) new apiError('MISSING PARAMETERS', 'nameType')
-    if(!amount) new apiError('MISSING PARAMETERS', 'amount')
-    if(!apiKey) new apiError('MISSING PARAMETERS', 'apiKey')
+    if (!apiKey) errorList.push('apiKey')
+    if (errorList.length > 0) return res.status(400).json({ error: `Parameters ${errorList.map(error => `'${error}'`)} are missing.` });
+    try {
+        const name = await randomName(apiKey, {type: nameType || 'fullname', names_list: customNamesList || []})
+        return res.json({name})
+    } catch (e) {
+        console.log(e)
+        return res.json({ error: `${e}` })
+    }
 
-    if (errorList.length > 0) return sendError({ type: errorType, message: `Parameters ${errorList.map(error => `'${error.parameter}'`)} are missing.` })
-    const config = {}
-    const name = await randomName(apiKey, config)
-    return res.json(name)
 }

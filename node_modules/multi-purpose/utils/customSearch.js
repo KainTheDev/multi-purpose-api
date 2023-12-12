@@ -20,7 +20,7 @@ async function customSearch(query, apiKey, searchEngineId, config = {}) {
       return data;
     })
     .catch(error => {
-      console.trace('Error fetching image search results: ' + error.message), process.exit(0);
+      throw new Error('Error fetching image search results: ' + error.message);
     });
 }
 module.exports = customSearch

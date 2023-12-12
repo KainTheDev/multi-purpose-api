@@ -10,11 +10,10 @@ module.exports = async (req, res) => {
   const api_key = parameters.api_key
   const cse_id = parameters.cse_id
   const errorList = []
-  const errorType = 'MISSING_PARAMETER'
   if (!query) errorList.push('query')
   if (!api_key) errorList.push('api_key')
   if (!cse_id) errorList.push('cse_id')
-  if (errorList.length > 0) return res.status(400).json({error: `Parameters ${errorList.map(error => `'${error.parameter}'`)} are missing.` })
+  if (errorList.length > 0) return res.status(400).json({error: `Parameters ${errorList.map(error => `'${error}'`)} are missing.` })
   let safe_search;
   if (safe_search) {
     if (parameters.safe_search === 'true') safe_search = true
