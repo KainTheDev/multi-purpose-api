@@ -54,7 +54,7 @@ a:active {
     margin: auto;
     margin-top: 13%;
 }
- 
+
 .lower-body {
     background-color: rgba(0, 0, 0, 0.8);
     height: auto;
@@ -71,7 +71,8 @@ a:active {
     height: 100%;
     width: 100%;
     position: fixed;
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.475) 0%, rgba(0, 0, 0, 0.245) 49%, rgba(255, 0, 0, 0.508) 100%);;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.475) 0%, rgba(0, 0, 0, 0.245) 49%, rgba(255, 0, 0, 0.508) 100%);
+    ;
 }
 
 button.primary {
