@@ -1,4 +1,4 @@
-const { getScrambledWordQuestions } = require('multi-purpose')
+const { getScrambledWordQuestions } = require('multi-purpose');
 /**
  * 
  * @param {import('express').Request} req 
@@ -9,7 +9,8 @@ module.exports = async (req, res) => {
     let config;
     const words = Number(parameters.words)
     if (words)
-        config = { words: isNAN(words) }
-    const list = await getScrambledWordQuestions(config)
+        config = { words: isNaN(words) }
+    let list;
+    list = (await getScrambledWordQuestions(config)).catch(e => res.json({error: e}))
     return res.json(list)
 }

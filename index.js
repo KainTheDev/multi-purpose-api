@@ -23,3 +23,6 @@ for (const func of functions) {
 app.listen(3000, () => {
   console.log('http://localhost:3000/')
 })
+
+const multiPurpose = require('multi-purpose');
+console.log(multiPurpose)

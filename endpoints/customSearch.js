@@ -5,26 +5,16 @@ const { customSearch } = require('multi-purpose')
  * @param {import('express').Response} res 
  */
 module.exports = async (req, res) => {
-  function sendError(object) {
-    res.json({
-      error: object
-    })
-  }
-  class apiError {
-    constructor(type, name) {
-      if (type === 'MISSING_PARAMETER') errorString.push({ parameter: name, required: true });
-    }
-  }
   const parameters = req.query
   const query = parameters.query
   const api_key = parameters.api_key
   const cse_id = parameters.cse_id
-  const errorString = []
+  const errorList = []
   const errorType = 'MISSING_PARAMETER'
-  if (!query) new apiError(errorType, 'query')
-  if (!api_key) new apiError(errorType, 'api_key')
-  if (!cse_id) new apiError(errorType, 'cse_id')
-  if (errorString.length > 0) return sendError({ type: errorType, message: `Parameters ${errorString.map(error => `'${error.parameter}'`)} are missing.` })
+  if (!query) errorList.push('query')
+  if (!api_key) errorList.push('api_key')
+  if (!cse_id) errorList.push('cse_id')
+  if (errorList.length > 0) return res.status(400).json({error: `Parameters ${errorList.map(error => `'${error.parameter}'`)} are missing.` })
   let safe_search;
   if (safe_search) {
     if (parameters.safe_search === 'true') safe_search = true
