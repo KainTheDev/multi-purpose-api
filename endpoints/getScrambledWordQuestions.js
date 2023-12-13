@@ -14,6 +14,6 @@ module.exports = async (req, res) => {
         const list = await getScrambledWordQuestions(config)
         return res.json(list)
     } catch (e) {
-        return res.json({ error: `${e}` })
+        return res.status(400).json({ error: `${e}` })
     }
 }
