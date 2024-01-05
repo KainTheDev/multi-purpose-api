@@ -1,7 +1,6 @@
 // pages/endpoints.js
 import Head from 'next/head';
 import { useEffect } from 'react';
-
 const Endpoints = () => {
     useEffect(() => {
         // Fetch and populate endpoints here
@@ -11,8 +10,13 @@ const Endpoints = () => {
 
     const fetchEndpoints = async () => {
         try {
-            const response = await fetch('/api/fetchEndpoints'); // Replace with your actual endpoints URL
+            const response = await fetch('/api/fetchEndpoints', {
+                headers: {
+                    key: 15092020
+                }
+            }); // Replace with your actual endpoints URL
             const data = await response.json();
+            if (data.error) throw data.error;
             // Assuming the data is an array of endpoints
             const endpointsContainer = document.getElementById('endpoints');
             const endpoints = data.endpoints

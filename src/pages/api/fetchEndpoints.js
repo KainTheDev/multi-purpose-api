@@ -1,19 +1,17 @@
 // pages/api/example.js
 
-import { readdirSync } from "fs";
+import {  readdirSync } from "fs";
 import { join } from "path";
 
-/**
- * 
- * @param {Request} req 
- * @param {Response} res 
- */
 export default async function handler(req, res) {
-  try{
+  const securityKey = req.headers.key
+  const securityKey_ENV = process.env.securityKey
+  console.log(securityKey_ENV)
+  if (!securityKey || securityKey !== securityKey_ENV) {
+    await res.status(401).json({ error: 'Unauthorized.' });
+    
+  } else {
     const endpoints = readdirSync(join(process.cwd(), 'src', 'pages', 'api')).map(endpoint => endpoint.split('.')[0])
-    await res.json({endpoints})
-  }catch(e){
-    await res.json({error: `${e}`})
+    await res.json({ endpoints })
   }
-  }
-  
+}
