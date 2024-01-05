@@ -1,6 +1,7 @@
 // pages/endpoints.js
 import Head from 'next/head';
 import { useEffect } from 'react';
+import { env } from '../../next.config';
 const Endpoints = () => {
     useEffect(() => {
         // Fetch and populate endpoints here
@@ -12,7 +13,7 @@ const Endpoints = () => {
         try {
             const response = await fetch('/api/fetchEndpoints', {
                 headers: {
-                    key: 15092020
+                    authorize: `key:${env.securityKey}`
                 }
             }); // Replace with your actual endpoints URL
             const data = await response.json();

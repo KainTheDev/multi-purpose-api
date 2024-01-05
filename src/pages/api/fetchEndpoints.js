@@ -4,10 +4,9 @@ import {  readdirSync } from "fs";
 import { join } from "path";
 
 export default async function handler(req, res) {
-  const securityKey = req.headers.key
-  const securityKey_ENV = process.env.securityKey
-  console.log(securityKey_ENV)
-  if (!securityKey || securityKey !== securityKey_ENV) {
+  const authorize = req.headers.authorize
+  const securityKey = process.env.securityKey
+  if (!authorize || authorize.split(':')[1] !== securityKey) {
     await res.status(401).json({ error: 'Unauthorized.' });
     
   } else {
